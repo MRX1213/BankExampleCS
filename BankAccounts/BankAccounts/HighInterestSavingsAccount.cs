@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankAccounts
 {
-    internal class HighInterestSavingsAccount : SavindsAccount
+    public class HighInterestSavingsAccount : SavindsAccount
     {
         public HighInterestSavingsAccount(string accountNumber, string accountHolder, decimal initialBalance, decimal interestRate) :
             base(accountNumber, accountHolder, initialBalance, interestRate)

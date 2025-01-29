@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BankAccounts
 {
-    internal class CheckingAccount : Account
+    public class CheckingAccount : Account
     {
         public decimal OverdraftLimit { get; private set; }
 
-        public CheckingAccount(string accountNumber, string accountHolder, decimal initialBalance, decimal overdrawnLimit) :
+        public CheckingAccount(string accountNumber, string accountHolder, decimal initialBalance, decimal overdraftLimit) :
                 base(accountNumber, accountHolder, initialBalance)
         {
-            OverdraftLimit = overdrawnLimit;
+            OverdraftLimit = overdraftLimit;
         }
 
         public override void Withdraw(decimal amount)

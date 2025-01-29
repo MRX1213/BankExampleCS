@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankAccounts
 {
-    internal class SavindsAccount : Account
+    public class SavindsAccount : Account
     {
         public decimal InterestRate { get; private set; }
         public SavindsAccount(string accountNumber, string accountHolder, decimal initialBalance, decimal interestRate) :

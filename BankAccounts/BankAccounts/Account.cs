@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankAccounts
 {
-    public class Account
+    public abstract class Account
     {
         public string AccountNumber { get; private set; }
         public string AccountHolder { get; private set; }
@@ -29,6 +29,14 @@ namespace BankAccounts
             if (amount < 0) { throw new ArgumentException("Withdraw amount must be positive"); }
             if (amount > Balance) { throw new InvalidOperationException("Insufficient funds"); }
             Balance -= amount;
+        }
+
+        public static List<Account> Accounts { get; private set; }
+        public static void GenerateTestAccounts()
+        {
+            Accounts = new List<Account>();
+            Accounts.Add(new SavindsAccount("1001", "Alice", 1000, 0.03m));
+            Accounts.Add(new SavindsAccount("1002", "Bob", 2000, 0.05m));
         }
     }
 }
